@@ -22,6 +22,11 @@ public class ContactList implements Serializable {
         newNode.setContactNumber(contactNumber);
         newNode.setAnotherContactNumber(anotherContactNumber);
         newNode.setEmailAddress(emailAddress);
+
+    }
+
+    private boolean isEmpty() {
+        return (contactListLength == 0);
     }
 }
 
