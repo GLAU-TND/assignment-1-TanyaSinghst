@@ -3,6 +3,15 @@ package list;
 import personADT.ContactlistADT;
 
 public class ContactList implements ContactlistADT {
+
+    private Person head;
+    private int contactListLength;
+
+    public ContactList() {
+        head = null;
+        contactListLength = 0;
+    }
+
     @Override
     public boolean add(Object o) {
         return false;
