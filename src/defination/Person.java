@@ -1,4 +1,4 @@
-package list;
+package defination;
 
 public class Person {
 }
