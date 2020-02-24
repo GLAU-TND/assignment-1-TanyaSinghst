@@ -33,7 +33,29 @@ public class ContactList implements Serializable {
                 String[] ourNames2 = newNode.getFirstName().split(" ");
 
                 int result = ourNames1[ourNames1.length - 1].compareToIgnoreCase(ourNames2[ourNames2.length - 1]);
+                if (result > 0) {
+                    if (previous == null) {
+                        newNode.setNext(current);
+                        head = newNode;
+                        contactListLength++;
+                        break;
+                    }
+                    previous.setNext(newNode);
+                    newNode.setNext(current);
+                    contactListLength++;
+                    break;
+                } else {
+                    if (current.getNext() == null) {
+                        current.setNext(newNode);
+                        newNode.setNext(null);
+                        contactListLength++;
+                        break;
+                    }
+                    previous = current;
+                    current = current.getNext();
+                }
             }
+
         }
     }
 
@@ -41,3 +63,5 @@ public class ContactList implements Serializable {
         return (contactListLength == 0);
     }
 }
+
+
